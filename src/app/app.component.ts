@@ -18,10 +18,10 @@ export class AppComponent implements AfterViewInit {
   command = '';
   history: TerminalLine[] = [];
   historyIndex = -1;
-  readonly email = 'manojkumarca8@gmail.com';
-  readonly github = 'https://github.com/manojca7';
+  readonly email = 'manojkumarca8@gmail.com'; 
+  readonly github = 'https://github.com/manojca8';
   readonly phone = '+91 9036455404';
-  readonly linkedin = 'YOUR_LINKEDIN_URL'; // Add your LinkedIn profile URL before publishing.
+  readonly linkedin = 'https://www.linkedin.com/in/manoj-kumar-c-a-67a49a60/';
 
   readonly projects = [
     { name: 'Airline digital experience', type: 'Enterprise web application', stack: 'Angular · TypeScript · GraphQL', description: 'Frontend engineering for airline digital journeys and payment-related experiences. Add only project details you are permitted to share.' },
@@ -83,12 +83,28 @@ export class AppComponent implements AfterViewInit {
         this.writeOutput('Exploring: React · AWS · Docker · Kubernetes · GenAI');
         this.scrollTo('skills');
         break;
-      case 'experience':
-        this.writeOutput('Professional experience: 11+ years in frontend development.');
-        this.writeOutput('Focus areas: enterprise applications, Angular architecture, UI engineering and team collaboration.');
-        this.writeOutput('Add verified employer names, titles and dates in the Experience section before publishing.');
-        this.scrollTo('experience');
-        break;
+     case 'experience':
+  this.writeOutput('PROFESSIONAL EXPERIENCE — 11+ YEARS');
+  this.writeOutput('');
+  this.writeOutput('2026 – PRESENT | Lead Engineer – AEM & Digital Experience');
+  this.writeOutput('Company: Amadeus');
+  this.writeOutput('Leading 4 developers on AEM development and team delivery.');
+  this.writeOutput('Technical design · Development · Code reviews · Scrum');
+  this.writeOutput('');
+  this.writeOutput('2019 – 2026 | Full Stack Engineer');
+  this.writeOutput('Company: Amadeus North America');
+  this.writeOutput('Angular · Node.js · AEM · APIs · Enterprise applications');
+  this.writeOutput('');
+  this.writeOutput('2017 – 2019 | Senior Software Engineer');
+  this.writeOutput('Company: Amadeus Software Labs India');
+  this.writeOutput('');
+  this.writeOutput('2016 – 2017 | Software Engineer');
+  this.writeOutput('Company: GlobalLogic');
+  this.writeOutput('');
+  this.writeOutput('2014 – 2016 | Software Developer');
+  this.writeOutput('Company: emids Technologies');
+  this.scrollTo('experience');
+  break;
       case 'projects':
   this.writeOutput(
     'The projects section is currently hidden. Please check back later.',

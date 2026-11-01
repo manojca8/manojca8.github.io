@@ -1,0 +1,139 @@
+<div class="site-shell" [class.light-theme]="theme === 'light'">
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Manoj home">MK<span>.</span><small> / DIGITAL SPACE</small></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#about">About</a><a href="#projects">Projects</a><a href="#blog">Writing</a><a href="#contact">Contact</a>
+    </nav>
+    <div class="top-actions">
+      <span class="availability"><i></i> OPEN TO OPPORTUNITIES</span>
+      <button class="theme-toggle" type="button" (click)="toggleTheme()" [attr.aria-label]="theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'">
+        <span>{{ theme === 'dark' ? '☼' : '☾' }}</span> {{ theme === 'dark' ? 'Light' : 'Dark' }}
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-line"></span> FRONTEND ENGINEER · BANGALORE, INDIA</div>
+        <h1>Building the web,<br><em>one interface</em><br>at a time<span class="accent">.</span></h1>
+        <p class="hero-description">I'm Manoj Kumar — a frontend engineer focused on Angular, TypeScript and thoughtful digital experiences.</p>
+        <div class="hero-meta">
+          <div><strong>11<span>+</span></strong><small>YEARS EXPERIENCE</small></div>
+          <div><strong>Angular</strong><small>CORE SPECIALITY</small></div>
+          <div><strong>Web</strong><small>MY PLAYGROUND</small></div>
+        </div>
+      </div>
+      <div class="terminal-window" aria-label="Interactive portfolio terminal">
+        <div class="terminal-titlebar">
+          <div class="window-dots"><i></i><i></i><i></i></div>
+          <span>manoj&#64;portfolio: ~</span>
+          <span class="terminal-live">● LIVE</span>
+        </div>
+        <div class="terminal-body" #terminalBody (click)="focusTerminal()">
+          <div class="terminal-welcome">
+            <div class="ascii">┌──────────────────────────────┐<br>│  MANOJ KUMAR / PORTFOLIO     │<br>└──────────────────────────────┘</div>
+            <p class="terminal-muted">Interactive shell · v1.0.0</p>
+          </div>
+          <div class="terminal-history" aria-live="polite">
+            <div *ngFor="let line of history" class="terminal-line" [class.command-line]="line.kind === 'command'" [class.error-line]="line.kind === 'error'" [class.success-line]="line.kind === 'success'">
+              <ng-container *ngIf="line.kind === 'command'; else outputLine"><span class="prompt-symbol">➜</span> <span class="prompt-path">~</span> {{ line.text }}</ng-container>
+              <ng-template #outputLine>{{ line.text }}</ng-template>
+            </div>
+          </div>
+          <div class="terminal-input-row">
+            <span class="prompt-symbol">➜</span><span class="prompt-path">~</span>
+            <input #commandInput [(ngModel)]="command" (keydown)="onKeydown($event)" placeholder="type a command..." aria-label="Enter a portfolio command" autocomplete="off" spellcheck="false">
+            <span class="input-cursor"></span>
+          </div>
+        </div>
+        <div class="terminal-footer"><span>TRY A COMMAND</span><button (click)="quickCommand('help')">help</button><button (click)="quickCommand('projects')">projects</button><button (click)="quickCommand('resume')">resume</button></div>
+      </div>
+      <div class="scroll-note"><span></span> SCROLL TO EXPLORE</div>
+    </section>
+
+    <section class="intro-strip">
+      <span class="section-index">01 / PROFILE</span>
+      <p>Curious by nature. Engineer by craft. I enjoy turning complex requirements into clean, accessible and maintainable interfaces.</p>
+      <a href="#about" class="text-link">MORE ABOUT ME ↗</a>
+    </section>
+
+    <section class="content-section about-section" id="about">
+      <div class="section-heading"><span class="section-index">02 / ABOUT</span><span class="section-kicker">A LITTLE CONTEXT</span></div>
+      <div class="two-column">
+        <h2>Engineering<br>with <em>intention.</em></h2>
+        <div class="section-copy">
+          <p>I'm a frontend developer with 11+ years of experience working on web applications. My strongest area is Angular and the broader TypeScript ecosystem.</p>
+          <p>I care about maintainable architecture, responsive interfaces, performance and making everyday experiences feel effortless.</p>
+          <p class="muted-note">This section is yours to personalise further with your story, values and career highlights.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section skills-section" id="skills">
+      <div class="section-heading"><span class="section-index">03 / TOOLKIT</span><span class="section-kicker">TOOLS I WORK WITH</span></div>
+      <h2>My technical <em>stack.</em></h2>
+      <div class="skill-groups">
+        <div class="skill-group"><span class="skill-number">01</span><div><h3>Frontend</h3><p>Angular · TypeScript · JavaScript · RxJS · HTML5 · CSS3 · Bootstrap</p></div></div>
+        <div class="skill-group"><span class="skill-number">02</span><div><h3>Backend & APIs</h3><p>Node.js · Express · GraphQL · REST APIs · Java · AEM · MongoDB · MySQL</p></div></div>
+        <div class="skill-group"><span class="skill-number">03</span><div><h3>Testing & Delivery</h3><p>Jest · Jasmine · Cypress · Playwright · Git · Jenkins · Sonar</p></div></div>
+        <div class="skill-group"><span class="skill-number">04</span><div><h3>Exploring</h3><p>React · AWS · Azure · Docker · Kubernetes · Generative AI</p></div></div>
+      </div>
+    </section>
+    <section class="content-section experience-section" id="experience">
+      <div class="section-heading">
+        <span class="section-index">04 / JOURNEY</span>
+        <span class="section-kicker">CAREER SNAPSHOT</span>
+      </div>
+
+      <h2>Full Stack <em>Engineering.</em></h2>
+
+      <div class="experience-card">
+        <div class="experience-date">11+ YEARS</div>
+        <div>
+          <h3>Full Stack Engineer</h3>
+          <p>
+            Frontend Engineering · Angular · TypeScript · JavaScript ·
+            Node.js · Express · REST APIs · GraphQL · MongoDB
+          </p>
+          <small>
+            Building scalable web applications, reusable UI components,
+            API integrations and enterprise digital experiences.
+          </small>
+        </div>
+      </div>
+    </section>
+<!-- 
+    <section class="content-section projects-section" id="projects">
+      <div class="section-heading"><span class="section-index">05 / SELECTED WORK</span><span class="section-kicker">BUILT WITH CURIOSITY</span></div>
+      <div class="section-title-row"><h2>Things I've <em>built.</em></h2><span class="section-count">03 PROJECTS</span></div>
+      <div class="project-grid">
+        <article class="project-card" *ngFor="let project of projects; let i = index">
+          <div class="project-top"><span>PROJECT / 0{{ i + 1 }}</span><span>↗</span></div>
+          <div class="project-art" [class.art-two]="i === 1" [class.art-three]="i === 2"><span>{{ i === 0 ? '✳' : i === 1 ? '⌘' : 'MK.' }}</span></div>
+          <p class="project-type">{{ project.type }}</p><h3>{{ project.name }}</h3><p class="project-description">{{ project.description }}</p><div class="project-stack">{{ project.stack }}</div>
+        </article>
+      </div>
+      <p class="muted-note">Some enterprise work may be confidential. Publish only information and screenshots you are authorised to share.</p>
+    </section> -->
+
+    <!-- <section class="content-section blog-section" id="blog">
+      <div class="section-heading"><span class="section-index">06 / FIELD NOTES</span><span class="section-kicker">THINGS I'M THINKING ABOUT</span></div>
+      <div class="section-title-row"><h2>Notes from the <em>web.</em></h2><span class="section-count">WRITING / 2026</span></div>
+      <a class="blog-row" *ngFor="let post of posts; let i = index" href="mailto:manojkumarca8&#64;gmail.com?subject=Blog%20article%20request">
+        <span class="blog-number">0{{ i + 1 }}</span><div class="blog-main"><span class="blog-category">{{ post.category }} · {{ post.date }}</span><h3>{{ post.title }}</h3><p>{{ post.excerpt }}</p></div><span class="blog-arrow">↗</span>
+      </a>
+      <p class="muted-note">These are starter article ideas. Replace them with your published posts before launch.</p>
+    </section> -->
+
+    <section class="contact-section" id="contact">
+      <div class="section-heading"><span class="section-index">07 / CONNECT</span><span class="section-kicker">HAVE A GOOD ONE IN MIND?</span></div>
+      <h2>Let's build<br>something <em>useful.</em></h2>
+      <p>For opportunities, collaborations or a good conversation about frontend engineering, feel free to reach out. Based in Bangalore, India.</p>
+      <a class="contact-email" href="mailto:manojkumarca8&#64;gmail.com">manojkumarca8&#64;gmail.com ↗</a>
+      <div class="contact-links"><a href="https://github.com/manojca7" target="_blank" rel="noopener">GITHUB ↗</a><a href="#contact">LINKEDIN — ADD URL ↗</a><a href="tel:+919036455404">+91 9036455404 ↗</a><button (click)="quickCommand('resume')">DOWNLOAD RESUME ↓</button></div>
+    </section>
+  </main>
+
+  <footer class="footer"><a class="brand" href="#top">MK<span>.</span></a><span>DESIGNED & BUILT WITH ANGULAR</span><span>© 2026 MANOJ KUMAR</span><button (click)="toggleTheme()">SWITCH THEME ↗</button></footer>
+</div>
